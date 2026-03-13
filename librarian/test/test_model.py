@@ -1,8 +1,9 @@
 from librarian.models import Book, BookStatus, Loan, Member
 
 
+##Create tests for the models in librarian/models.py##
 def test_creation_book():
-    my_book = Book(isbn="9780441172719", author = "Frank Herbert", title = "Dune", publication_year=1990, book_status=BookStatus.NOT_READY_FOR_RENT, id=None)
+    my_book = Book(isbn="9780441172719", author = "Frank Herbert", title = "Dune", publication_year=1990, book_status=BookStatus.NOT_READY_FOR_RENT, id=1)
 
     assert my_book.isbn == "9780441172719"
     assert my_book.author == "Frank Herbert"
@@ -10,6 +11,7 @@ def test_creation_book():
     assert my_book.publication_year == 1990
     assert my_book.book_status == BookStatus.NOT_READY_FOR_RENT
 
+##Test the enumeration values of BookStatus##
 def test_enumaration_book_status():
     assert BookStatus.AVAILABLE.value == "AVAILABLE"
     assert BookStatus.CHECKED_OUT.value == "CHECKED_OUT"
@@ -17,6 +19,7 @@ def test_enumaration_book_status():
     assert BookStatus.IN_REPAIR.value == "IN_REPAIR"
     assert BookStatus.NOT_READY_FOR_RENT.value == "NOT_READY_FOR_RENT"
 
+##Member Creation Test##
 def test_creation_member():
     my_member = Member(member_id=1, member_name="John Doe", email="john.doe@example.com", address="123 Main St")
 
@@ -26,6 +29,7 @@ def test_creation_member():
     assert my_member.address == "123 Main St"
     assert my_member.fees == 0.0
 
+##Loan Creation Test##
 def test_creation_loan():
     from datetime import datetime, timedelta
 
