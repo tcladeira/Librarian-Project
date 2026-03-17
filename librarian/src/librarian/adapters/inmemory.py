@@ -23,9 +23,9 @@ class InMemoryRepository:
 
     ##Member Operations##
     def add_member(self, member: Member) -> None:
-        if member.id in self.members:
-            raise ValueError(f"Member with id {member.id} already exists.")
-        self.members[member.id] = member
+        if member.member_id in self.members:
+            raise ValueError(f"Member with id {member.member_id} already exists.")
+        self.members[member.member_id] = member
 
     def get_member_by_id(self, member_id: int) -> Member | None:
         return self.members.get(member_id)
@@ -34,10 +34,10 @@ class InMemoryRepository:
         return self.members
 
     ##Loan Operations## 
-    def add_loan(self, loan: Loan) -> None:
-        if loan.id in self.loans:
-            raise ValueError(f"Loan with id {loan.id} already exists.")
-        self.loans[loan.id] = loan
+    def add_loan_by_id(self, loan: Loan) -> None:
+        if loan.loan_id in self.loans:
+            raise ValueError(f"Loan with id {loan.loan_id} already exists.")
+        self.loans[loan.loan_id] = loan
 
     def get_loan_by_id(self, loan_id: int) -> Loan | None:
         return self.loans.get(loan_id)

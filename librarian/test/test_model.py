@@ -36,11 +36,11 @@ def test_creation_loan():
     borrow_date = datetime.now()
     due_date = borrow_date + timedelta(days=14)
 
-    my_loan = Loan(book_id=1, member_id=1, loan_number=1, borrow_date=borrow_date, due_date=due_date)
+    my_loan = Loan(book_id=1, member_id=1, loan_id=1, borrow_date=borrow_date, due_date=due_date)
 
     assert my_loan.book_id == 1
     assert my_loan.member_id == 1
-    assert my_loan.loan_number == 1
+    assert my_loan.loan_id == 1
     assert my_loan.borrow_date == borrow_date
     assert my_loan.due_date == due_date
     assert my_loan.returned_date is None

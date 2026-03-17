@@ -31,7 +31,7 @@ class Member:
 class Loan:
     book_id: int
     member_id: int
-    loan_number: int 
+    loan_id: int 
     borrow_date: datetime
     due_date: datetime
     returned_date: datetime | None = None
